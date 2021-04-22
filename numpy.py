@@ -3,6 +3,7 @@ import scipy as s
 import matplotlib.pyplot as plt
 
 import mojmodul as mm
+import funkcja15 as f15
 
 
 arr = np.array([1, 2, 3, 4, 5])
@@ -449,16 +450,41 @@ print(sumowanie(mac))
 
 # zad 14
 print("\n")           
-#f3 = lambda a,x: a*x**3
-#print(f3(2,2))
+
+f3 = lambda x: np.cos(2*x)
+y1=f3(x)
+x=np.arange(-10,10,0.1)
+
+plt.plot(x,y1,'r--')
 
 
-y = lambda : np.cos(2*x)
-print(y)
+# zad 15
+print("\n") 
 
-x = np.arange(-10, 10, 0.1)
-y1 = np.cos(2*x)
+x=np.arange(-10,10,0.1)
+y2=f15.funkcja15(x)
+plt.plot(x,y2,'g+')
 
 
 
-#plt.plot(x,y)
+# zad 17
+print("\n") 
+y2=f15.funkcja15(x)
+plt.plot(x,3*y1,x,y2,'b*')
+
+
+
+#zad 18
+print("\n") 
+A = np.array([[10,5,1,7],
+              [10,9,5,5],
+              [1,6,7,3],
+              [10,0,1,3]])
+
+b = np.array([[34],
+              [44],
+              [25],
+              [27]])
+
+x = np.linalg.solve(A, b)
+print(x)
